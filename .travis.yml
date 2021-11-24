@@ -1,0 +1,25 @@
+language: node_js
+cache: 
+  directories:
+    - node_modules
+    - ~/.npm
+node_js:
+  - '12'
+git: 
+  depth: 3
+script:
+  - yarn test
+notifications:
+  email:
+      recipients:
+        -oswaldopedroza.1996@gmail.com
+      on_success: always
+      on_failure: always
+deploy: 
+  provider: heroku
+  skip-cleanup: true
+  keep-history: true
+  api_key: f64247c1-88f6-4be9-ad1a-d9db0b7e006b
+  app: myfirststore-backend
+  on: 
+    repo: oswaldoPedroza/platzi-store-backend
